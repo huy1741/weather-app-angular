@@ -1,0 +1,16 @@
+<div class="search-bar">
+  <input
+    class="input"
+    type="text"
+    [(ngModel)]="searchText"
+    (keypress)="onKeyPress($event)"
+    placeholder="Type city name.."
+    autocomplete="off">
+    <button
+      class="button" 
+      type="submit"
+      (click)="onSearchClick()">
+        <i class="fa fa-search"></i>
+    </button>
+</div>
+   

@@ -1,0 +1,4 @@
+<app-header [currentUnitSystem]="unitSystem" (changeUnit)="changeUnit($event)">
+</app-header>
+<app-search-bar (changeCity)="changeCity($event)"></app-search-bar>
+<app-weather-widget-main (changeCoords)="changeCoords($event)" [currentUnitSystem]="unitSystem" [currentCity]="currentCity" [currentCoords]="currentCoords"></app-weather-widget-main>

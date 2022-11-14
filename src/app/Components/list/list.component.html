@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <p *ngIf="arrayOfCities.length > 1">There are {{arrayOfCities.length}} results with the same name. Please choose the closest coords.</p>
+    <ul class="ul" *ngIf="arrayOfCities.length > 1">
+    <li *ngFor="let city of arrayOfCities" data-cy=array>
+        <button class="li" type="button" (click)="handleChangeCity(city)">
+            <span>{{city['name']}} in {{city['sys']['country']}} {{city['coord']['lat']}} {{city['coord']['lon']}}</span>
+        </button>
+    </li>
+    </ul>
+</div>

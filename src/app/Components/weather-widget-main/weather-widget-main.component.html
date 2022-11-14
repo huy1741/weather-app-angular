@@ -1,0 +1,21 @@
+<app-list [arrayOfCities]="arrayOfCities" (handleChangeCoords)="handleChangeCoords($event)" (resetArray)="resetArray()"></app-list>
+<div id="container">
+    <div id="divWeatherMain">
+        <div class="icon">
+            <img  class="filter-white" [src]="WeatherData.icon">
+        </div>
+        <div class="clock">
+            <app-clock></app-clock>
+        </div>
+        <div class="weatherWidgetRow" style="font-size: 12px;">Current weather: {{WeatherData.currentWeather}}</div>
+        <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 10px;" data-cy="temp">{{WeatherData.temp}}°{{WeatherData.sign}}</div>
+        <div class="weatherWidgetRow" style="font-size: 12px;margin-top: 10px;" data-cy="tempMaxMin">Max/Min: {{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°{{WeatherData.sign}}</div>
+        <div class="weatherWidgetRow" style="font-size: 12px;" data-cy="feels">Feels Like: {{WeatherData.temp_feels_like}}°{{WeatherData.sign}}</div>
+        <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;" data-cy="name">{{WeatherData.name}}</div>
+        <div class="weatherWidgetRow" style="font-size: 12px;margin-top: 10px;">Humidity: {{WeatherData.humidity}}%</div>
+        <div *ngIf="errorMessage" class="weatherWidgetRow" style="font-size: 16px;margin-top: 10px;" data-cy="error">There is no such city. Please try again.</div>
+        <div class="loaderContainer" *ngIf="!WeatherData.name">
+            <div class="loader"></div>
+        </div>
+    </div>
+</div>
