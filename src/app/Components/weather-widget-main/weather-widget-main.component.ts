@@ -36,10 +36,7 @@ export class WeatherWidgetMainComponent implements OnInit {
     this.getWeatherData();
     this.errorMessage = false;
   }
-//https://api.openweathermap.org/data/2.5/weather?q=${this.currentCity}&units=${this.currentUnitSystem}&appid=1cb6ace31e50401f28b864f0b23fdc68
-//data=>{this.setWeatherData(data);}
-//https://api.openweathermap.org/data/2.5/find?q=London&appid=1cb6ace31e50401f28b864f0b23fdc68
-//data.list && data.list.length > 1 ? this.handleMultipleCities(data) : this.setWeatherData(data)
+
   getWeatherData(){
     fetch(this.api)
     .then(response => response.json())

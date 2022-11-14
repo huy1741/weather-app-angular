@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   onChangeUnitSwitcher() {
     const unitSystems = apiConfig.measurementUnits;
     const unitIndex = this.isUnitSwitcherChecked ? 1 : 0;
-    console.log(unitSystems[unitIndex])
     this.changeUnit.emit(unitSystems[unitIndex]);
   }
 }
