@@ -21,11 +21,11 @@ export class WeatherWidgetMainComponent implements OnInit {
   ngOnInit() {
     this.WeatherData = {
       icon: '',
-      temp: '',
-      temp_min: '',
-      temp_max: '',
+      temp: 0,
+      temp_min: 0,
+      temp_max: 0,
       currentWeather: '',
-      temp_feels_like: '',
+      temp_feels_like: 0,
       sign: '',
       humidity: '',
       name: '',
@@ -62,10 +62,10 @@ export class WeatherWidgetMainComponent implements OnInit {
   setWeatherData(data: any){
     this.WeatherData.currentWeather = data.weather ? data.weather[0].description : null;
     this.WeatherData.icon = data.weather ? `../../../assets/img/${data.weather[0].icon.slice(0, -1)}.svg` : null;
-    this.WeatherData.temp = data.main.temp;
-    this.WeatherData.temp_min = data.main.temp_min;
-    this.WeatherData.temp_max = data.main.temp_max;
-    this.WeatherData.temp_feels_like = data.main.feels_like;
+    this.WeatherData.temp = Math.round(data.main.temp)
+    this.WeatherData.temp_min = Math.round(data.main.temp_min);
+    this.WeatherData.temp_max = Math.round(data.main.temp_max);
+    this.WeatherData.temp_feels_like = Math.round(data.main.feels_like);
     this.WeatherData.sign = this.currentUnitSystem == 'metric' ? 'C' : 'F';
     this.WeatherData.humidity = data.main.humidity;
     this.WeatherData.name = data.name
