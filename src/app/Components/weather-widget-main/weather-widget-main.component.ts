@@ -62,7 +62,7 @@ export class WeatherWidgetMainComponent implements OnInit {
   setWeatherData(data: any){
     this.WeatherData.currentWeather = data.weather ? data.weather[0].description : null;
     this.WeatherData.icon = data.weather ? `../../../assets/img/${data.weather[0].icon.slice(0, -1)}.svg` : null;
-    this.WeatherData.temp = Math.round(data.main.temp)
+    this.WeatherData.temp = Math.round(data.main.temp);
     this.WeatherData.temp_min = Math.round(data.main.temp_min);
     this.WeatherData.temp_max = Math.round(data.main.temp_max);
     this.WeatherData.temp_feels_like = Math.round(data.main.feels_like);
